@@ -1,0 +1,520 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//<ШРИФТЫ>===============================================================================================
+//<Подключаем шрифты>=======================================================================================
+@font-face {
+	font-family: 'Stolzl';
+	src: url('../fonts/Stolzl-Regular.eot');
+	src: local('Stolzl Regular'), local('Stolzl-Regular'),
+			url('../fonts/Stolzl-Regular.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Stolzl-Regular.woff2') format('woff2'),
+			url('../fonts/Stolzl-Regular.woff') format('woff'),
+			url('../fonts/Stolzl-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Stolzl';
+	src: url('../fonts/Stolzl-Bold.eot');
+	src: local('Stolzl Bold'), local('Stolzl-Bold'),
+			url('../fonts/Stolzl-Bold.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Stolzl-Bold.woff2') format('woff2'),
+			url('../fonts/Stolzl-Bold.woff') format('woff'),
+			url('../fonts/Stolzl-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Stolzl';
+	src: url('../fonts/Stolzl-Light.eot');
+	src: local('Stolzl Light'), local('Stolzl-Light'),
+			url('../fonts/Stolzl-Light.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/Stolzl-Light.woff2') format('woff2'),
+			url('../fonts/Stolzl-Light.woff') format('woff'),
+			url('../fonts/Stolzl-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Stolzl";
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1200;
+$md1: 1199;
+$md2: 991;
+$md3: 768;
+$bg: #4C1DD2;
+$pink: #F86161;
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	background-color: $bg;
+	color: #ffffff;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: url('../img/firstscreen/bubble.svg') left  no-repeat,
+	url('../img/bg-line.svg') 2% 0 no-repeat,
+	url('../img/bg-line.svg') 25% 0 no-repeat,
+	url('../img/bg-line.svg') 50% 0 no-repeat,
+	url('../img/bg-line.svg') 75% 0 no-repeat,
+	url('../img/bg-line.svg') 98% 0 no-repeat;
+	@media (max-width: $md3+px){
+		background:url('../img/bg-line.svg') 2% 0 no-repeat,
+	url('../img/bg-line.svg') 50% 0 no-repeat,
+	url('../img/bg-line.svg') 98% 0 no-repeat;
+	}
+}
+
+	
+//</ОБОЛОЧКА>===========================================================================================================
+.main {
+	flex: 1 0 auto;
+}
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 15px;
+	@media (min-width: $mw+px){
+		max-width: 1200px;
+	}
+	@media (max-width: $md1+px) {
+		max-width: 991px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 768px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+	}
+}
+
+///<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "header.scss";
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+.title {
+	font-size: 48px;
+	line-height: 72px;
+	font-weight: 400;
+	text-align: left;	
+	font-size: 48px;
+	color: #ffffff;
+	
+}
+
+//==================================================================================================== #up {
+	.first-screen {
+		// .first-screen__body
+		&__body {
+			display: flex;
+			color: #ffffff;
+			text-align: left;
+			justify-content: space-between;
+			padding: 0 0 150px;
+		}
+		// .first-screen__text
+		&__text {
+			padding: 176px 0 154px;
+			flex: 0 1 60%;
+		}
+		// .first-screen__title
+		&__title {			
+			margin: 0 0 20px;
+			span{
+				font-weight: 300;
+			}
+		}
+		// .first-screen__subtitle
+		&__subtitle {
+			font-size: 24px;
+			line-height: 36px;
+			font-weight: 300;
+			margin: 0 0 60px;
+			padding: 0 150px 0 0;
+		}
+		// .first-screen__links
+		&__links {
+			display: flex;
+			a{
+				display: block;				
+				height: 56px;
+				border-radius: 12px;
+				font-size: 18px;
+				padding: 20px;
+			}
+		}
+		// .first-screen__call
+		&__call {	
+			width: 284px;		
+			background-color: #ffffff;		
+			color: #BCBCBC;
+			margin: 0 20px 0 0;
+		}
+		// .first-screen__link
+		&__link {
+			width: 335px;
+			background-color:$pink;		
+			color: #ffffff;
+			text-align: center;
+		}
+		// .first-screen__image
+		&__image {
+			position: relative;
+			padding: 35px 0 0;	
+			img{
+				width: 100%;
+			}
+					
+		}
+		// .first-screen__block
+		&__block {
+		}
+		&__bg1{
+			position: absolute;
+			bottom: 0;right: 0;
+			width: 91%;
+			height: 87.4%;
+			border-radius: 59px;
+			background: $pink;
+			z-index: -1;
+		}
+		&__bg2{
+			position: absolute;
+			top: 56px;
+			right: -48px;
+			width: 110px;
+			height: 108px;
+			background: url('../img/firstscreen/bg2.svg') top no-repeat;
+			z-index: -2;
+		}
+
+	// .first-screen__block
+	&__block {
+		color: #ffffff;
+		position: absolute;
+		border-radius: 21px;
+	}
+
+	@media (max-width: $md1+px) {
+		&__body {
+			padding: 0 0 150px;
+		}
+		&__text{
+			padding: 120px 0 0;
+		}
+		&__title{
+			font-size: 42px;
+		}
+		&__links{
+			flex-direction: column;
+		}
+		&__link{
+			margin: 20px 0 0;
+			width: 284px;
+		}
+	}
+	@media (max-width: $md2+px) {
+		&__title{
+			line-height: 64px;
+			margin: 0 0 7px;
+		}
+		&__subtitle{
+			font-size: 18px;
+    	line-height: 26px;
+			margin: 0 0 30px;
+			padding: 0;
+		}
+	}
+	@media (max-width: $md3+px) {
+		&__body{
+			flex-direction: column;
+		}
+		&__text{
+			padding: 30px 0 0;
+			margin: 0 0 20px;
+		}
+		&__title{
+			font-size: 38px;
+			line-height: 48px;
+		}
+		&__links {
+			a{
+				font-size: 16px;
+				text-align: center;
+			}
+			
+		}
+		&__image{
+			margin: 0 auto;
+		}
+		&__bg2{
+			top: 30px;
+		}
+	}
+}
+.block {
+	// .block__clients
+	&__clients {		
+		top: 48px;
+		left: -27px;
+		background-color: #121B30;
+		width: 159px;
+		height: 186px;		
+		padding: 25px 34px;
+	}
+	&__icon{
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background-color: #ffffff;
+	
+	}
+	// .block__number
+	&__number {
+		font-size: 22px;
+		font-weight: 400;
+		text-align: center;
+		margin: 0 0 8px;
+	}
+
+	// .block__text
+	&__text {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 18px;
+		text-align: center;
+	}
+	// .block__sale
+	&__sale {
+		position: absolute;
+		left: 367px;
+		top: 305px;
+		width: 288px;
+		height: 99px;
+		display: flex;
+		align-items: center;
+		padding: 16px 20px;		
+		background-color: #121B30;
+	}
+	// .block__diagramm
+	&__diagramm {
+		position: absolute;
+		bottom: -100px;
+		left: 44%;
+		width: 68%;
+		height: 44%;
+		background: #ffffff;
+		border-radius: 15px;
+		z-index: 3;
+	}
+	@media (max-width: $md1+px){
+		&__clients {		
+			top: 48px;
+			left: -27px;			
+			width: auto;
+			height: auto;		
+			padding: 25px 25px;
+		}
+		&__sale {		
+			left: 240px;		
+			padding: 16px 20px;		
+		}
+	}
+	@media (max-width: $md2+px){
+		&__icon{
+			width: 46px;
+			height: 46px;
+		}
+		&__clients {		
+			top: 8px;
+			left: -10px;			
+			padding: 20px;
+		}
+		
+		&__sale{
+			width: 245px;
+		}
+		&__diagramm {			
+			bottom: -100px;
+		}
+		&__number {
+			font-size: 18px;
+			margin: 0 0 5px;
+		}
+			
+	}
+	@media (max-width: $md3+px){
+		&__icon{
+			width: 38px;height: 38px;
+		}
+		&__sale{
+			left: 54%;
+			top: 50%;
+			width: 230px;
+			padding: 10px 12px;
+		}
+		&__clients{
+			padding: 10px;
+		}
+		&__diagramm {
+			left: 6%;
+			bottom: -75px;
+		}
+	}
+}
+.clients {
+	// .clients__icon
+	&__icon {
+		background: url('../img/firstscreen/clients.svg') center no-repeat, #ffffff;
+		margin: 0 auto 18px;
+	}
+	// .clients__number
+	&__number {
+	}
+	// .clients__text
+	&__text {
+	}
+	@media (max-width: $md2+px){
+		&__icon{
+			margin: 0 auto 12px;
+		}
+		
+	}
+}
+.sale {
+	// .sale__icon
+	&__icon {
+		background: url('../img/firstscreen/diagram.svg') center no-repeat, #ffffff;
+		flex: 0 0 auto;
+	}
+	// .sale__text-wraper
+	&__text-wraper {
+		margin: 0 0 0 18px;
+	}
+	// .sale__text
+	&__text {
+		text-align: left;
+	}
+	// .sail__number
+	&__number {
+		text-align: left;
+	}
+	@media (max-width: $md2+px){
+		&__text-wraper {
+			margin: 0 0 0 12px;
+		}
+	}
+}
+
+.diagramm {
+	&__body{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	// .diagramm__icon
+	&__icon {
+		position: absolute;
+		top: 24px;
+		left: 24px;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		background: url('../img/firstscreen/grafic-icon.svg') center no-repeat, #F6F4FC;
+	}
+	// .diagramm__title
+	&__title {
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 700;
+		color: #121B30;
+		padding: 24px 20px 0 92px;
+	}
+	// .diagramm__chart
+	&__chart {
+		position: absolute;
+		left: 55px;
+		bottom: 25px;
+		width: 74.4%;
+		height: 54.5%;
+		z-index: 4;
+		background: url('../img/firstscreen/lines/chart.svg') -4px 8px / contain no-repeat,
+		url('../img/firstscreen/lines/Rectangle.svg') center / contain,
+		url('../img/firstscreen/lines/Line1.svg') 0% 25% / contain no-repeat,
+		url('../img/firstscreen/lines/Line1.svg') 0% 50% / contain no-repeat,
+		url('../img/firstscreen/lines/Line1.svg') 0% 75% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 14.3% 0% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 28.6% 0% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 42.9% 0% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 57.2% 0% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 71.5% 0% / contain no-repeat,
+		url('../img/firstscreen/lines/Line2.svg') 85.8% 0% / contain no-repeat;
+		overflow: visible;
+	}
+	// .diagramm__labels
+	&__labels {	
+		position: absolute;
+		bottom: 34px;
+		left: 24px;
+		font-size: 9px;
+		li{
+			margin: 0 0 30px;
+			color: #878E9C;
+
+		}
+	}
+	@media (max-width: $md1+px){
+		&__labels{			
+			bottom: 28px;		
+			li{
+				margin: 0 0 28px;
+			}
+		}
+	}
+	@media (max-width: $md2+px){
+		&__labels{			
+			bottom: 33px;		
+			li{
+				margin: 0 0 24px;
+			}
+		}
+	}
+	@media (max-width: $md3+px){
+		&__icon{
+			width: 38px;height: 38px;
+		}
+		&__labels{			
+			bottom: 33px;		
+			li{
+				margin: 0 0 32px;
+			}
+		}
+	}
+	@media (max-width: 470px){
+		&__labels{			
+			bottom: 20px;		
+			li{
+				margin: 0 0 27px;
+			}
+		}
+	}
+}
+//====================================================================================================

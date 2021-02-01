@@ -1,0 +1,119 @@
+.footer {
+  background: #333333;
+  color: #ffffff;
+  // .footer__body
+  &__body {
+    padding: 60px 0 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  // .footer__column
+  // .footer__title
+  &__title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
+    margin: 0 0 30px;
+  }
+  // .footer__list
+  &__list {
+    li{
+      margin: 0 0 15px;
+      padding: 0 10px 0 0;
+    }
+  }
+  // .footer__item
+  &__item {
+    color: #ffffff;
+    font-size: 14px;
+  }
+  // .footer__menu
+  // .footer__links
+ // .footer__link
+  &__link {
+    margin: 0 0 20px;
+    a{
+      padding: 0 0 0 30px;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    
+  }
+  // .footer__tel
+  &__tel {
+    background: url(../img/icons/telegram.svg) left no-repeat;
+  }
+  // .footer__viber
+  &__viber {
+    background: url(../img/icons/viber-logo.svg) left no-repeat;
+  }
+  // .footer__wa
+  &__wa {
+    background: url(../img/icons/whatsapp-logo.svg) left no-repeat;
+  }
+  // .footer__phone
+  &__phone {
+    background: url(../img/icons/call-answer.svg) left no-repeat;
+  }
+  // .footer__mail
+  &__mail {
+    background: url(../img/icons/mail-black-envelope-symbol.svg) left no-repeat;
+  }
+  &__btn {
+    padding: 14px 28px;
+    margin: 40px 0 40px;
+    width: 260px;
+		border-radius: 4px;
+		font-size: 18px;
+		color: #fff;
+		background: linear-gradient(to right, #F6BD60, #E88952);
+		box-shadow: 0 5px 10px rgba($color: #E88952, $alpha: 0.5);
+  }
+  &__logo{
+    a{
+      color: #4D4D4D;
+      font-size: 60px;
+      font-weight: 700;
+    }    
+  }
+
+ @media (max-width: $md3+px) {
+    &__body{
+      flex-wrap: wrap;
+      padding: 40px 0 20px;
+    }
+    &__title {
+      margin: 0 0 20px;
+    }
+    &__btn{
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .logo__name{
+      font-size: 46px;
+    }	
+	}
+	@media (max-width: $md4+px) {
+    &__body{
+      padding: 20px 0 10px;
+    }
+	.logo__name{
+    font-size: 46px;
+  }
+	}
+}
+.copyright{
+  border-top: 1px solid #4E4E4E;
+  padding: 18px 0 18px;
+      &__text{
+        text-align: center;
+        a{
+          color: #4E4E4E;
+          font-size: 14px;
+        }
+      }
+}
+//====================================================================================================
